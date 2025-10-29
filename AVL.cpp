@@ -156,8 +156,7 @@ NO* girarDireita(NO* y) {
     x->dir = y;
     y->esq = T2;
     // Passo 3: Atualize 'x' para ser o novo nó raiz da subárvore. 
-    /*x->dir = y;
-    raiz = x;*/
+    raiz = x;
     // Passo 4: Recalcule as alturas dos nós afetados.  
     x->altura = maior(alturaNo(x->esq), alturaNo(x->dir)) + 1;
     y->altura = maior(alturaNo(y->esq), alturaNo(y->dir)) + 1;
@@ -182,7 +181,6 @@ NO* girarEsquerda(NO* x) {
     y->esq = x;
     x->dir = T2;
     // Passo 3: Atualize 'y' para ser o novo nó raiz da subárvore. 
-    y->esq = x;
     raiz = y;
     // Passo 4: Recalcule as alturas dos nós afetados.
     y->altura = maior(alturaNo(y->esq), alturaNo(y->dir)) + 1;
